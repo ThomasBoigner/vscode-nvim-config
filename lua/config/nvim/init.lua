@@ -28,9 +28,13 @@ require("lazy").setup(
             tag = '0.1.8',
             dependencies = { 'nvim-lua/plenary.nvim' }
         },
-
         {
-            "catppuccin/nvim", name = "catppuccin", priority = 1000 
+            'AlexvZyl/nordic.nvim',
+            lazy = false,
+            priority = 1000,
+            config = function()
+                require 'nordic'.load()
+            end
         },
         {
             "nvim-treesitter/nvim-treesitter", build = ":TSUpdate"
